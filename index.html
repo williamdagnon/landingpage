@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Landing Page</title>
+    
+</head>
+<body>
+    <!-- ################# -->
+    <!-- Navigation -->
+    <!-- ################# -->
+    <nav>
+        <a href="#" class="logo">CO<span>OK</span></a>
+        <ul class="navigation">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div id="burger-menu" class="bx bx-menu"></div>
+        
+    </nav>
+
+     <!-- ################# -->
+    <!-- Home -->
+    <!-- ################# -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <span class="subtitle">Sous les toques des maitres</span>
+            <h1>Rencontrer les chefs <span>étoiles</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Minus rerum itaque quo corporis debitis non nobis quos eum,</p>
+            <a href="#" class="btn">En savoir plus</a>
+        </div>
+    </section> 
+    <!-- ################# -->
+    <!-- Service -->
+    <!-- ################# -->
+    <section class="service" id="service">
+        <div class="section-heading">
+            <span>Explorer le monde des chefs de renom</span>
+            <h2>Comment cela marche ?</h2>
+        </div>
+        <div class="service-container">
+            <div class="service-box">
+                <img src="./images/about-1.png" alt="">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Temporibus odio repudiandae dolorem laboriosam quae minus. <br>
+                     Temporibus suscipit eum laboriosam magnam.</p>
+            </div>
+
+            <div class="service-box">
+                <img src="./images/about-2.png" alt="">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Temporibus odio repudiandae dolorem laboriosam quae minus. <br>
+                     Temporibus suscipit eum laboriosam magnam.</p>
+            </div>
+
+            <div class="service-box">
+                <img src="./images/about-3.png" alt="">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Temporibus odio repudiandae dolorem laboriosam quae minus. <br>
+                     Temporibus suscipit eum laboriosam magnam.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ################# -->
+    <!-- chefs -->
+    <!-- ################# -->
+    <section class="chefs" id="chefs">
+        <div class="section-heading">
+            <span>
+              Les génies des casseroles
+            </span>
+            <h2>Nos chefs</h2>
+        </div>
+
+        <div class="chefs-container">
+                <div class="chefs-box">
+                    <img src="./images/c-1.jpg" alt="">
+                    <div class="chefs-content">
+                        <h4>Charles Cos</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, iusto beatae odio nostrum sed corrupti.</p>
+                        <a href="#" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="chefs-box">
+                    <img src="./images/c-2.jpg" alt="">
+                    <div class="chefs-content">
+                        <h4>Claude Sin</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, iusto beatae odio nostrum sed corrupti.</p>
+                        <a href="#" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+
+                <div class="chefs-box">
+                    <img src="./images/c-3.jpg" alt="">
+                    <div class="chefs-content">
+                        <h4>Pierre Tan</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, iusto beatae odio nostrum sed corrupti.</p>
+                        <a href="#" class="btn">En savoir plus</a>
+                    </div>
+                </div> 
+        </div>
+    </section>
+
+    <!-- ################# -->
+    <!-- Contact -->
+    <!-- ################# -->
+    <section class="contact" id="contact">
+        <div class="section-heading">
+            <span>
+              Laissez vous séduire
+            </span>
+            <h2>Nous Contacter</h2>
+        </div>
+
+        <div class="contact-container">
+            <form action="#">
+                <input type="text" placeholder="Indiquez votre nom">
+                <input type="text" placeholder="Indiquez votre prenom">
+                <input type="email" placeholder="Tapez votre email">
+                <textarea placeholder="Message"></textarea>
+                <input type="submit" value="Envoyer" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <!-- ################# -->
+    <!-- Copyright -->
+    <!-- ################# -->
+     <div class="copy">
+        <p>&copy;William Dev - Tous droits réservés.</p>
+     </div>
+
+     <script>
+        var section = document.querySelectorAll('section')
+        var header = document.querySelector('nav')
+        var btnBurger = document.querySelector('#burger-menu')
+        var nav = document.querySelector('.navigation')
+        var linkNav = document.querySelectorAll('.navigation a')
+
+        btnBurger.addEventListener('click', function(){
+            nav.classList.toggle('active')
+            btnBurger.classList.toggle('bx-x')
+            if(window.scrollY=== 0){
+                header.classList.toggle('active')
+            }
+        })
+
+        linkNav.forEach(link =>{
+            link.addEventListener('click', function(){
+            nav.classList.remove('active')
+            btnBurger.classList.remove('bx-x')
+            })
+        })
+
+        window.addEventListener('scroll', function(){
+            nav.classList.remove('active')
+            btnBurger.classList.remove('bx-x')
+        })
+        window.addEventListener('scroll', function(){
+            header.classList.toggle('active', window.scrollY>0)
+            
+        })
+
+        
+     </script>
+</body>
+</html>
